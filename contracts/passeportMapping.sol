@@ -5,23 +5,13 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Passeport is ERC721 {
 
-    // enum ?
+// worker
 
-    // struct
-    struct Worker {
-        address workerAddress;
-        string pseudo;
-        uint256 age;
-        string country;
-        string language;
-        string skills;
-    }
-
-    // Token name
-    string private _name;
-
-    // Token symbol
-    string private _symbol;
+    mapping(address => string) private _pseudo;
+    mapping(address => uint256) private _age;
+    mapping(address => string) private _country;
+    mapping(address => string) private _lang;
+    mapping(address => string) private _skills;
 
     // mapping of people is register
     mapping(uint256 => address) private _register;
