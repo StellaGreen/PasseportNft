@@ -13,9 +13,13 @@ contract Passeport is ERC721 {
     mapping(address => string) private _lang;
     mapping(address => string) private _skills;
 
-    // mapping of people is register
-    mapping(uint256 => address) private _register;
 
+    // mapping of people is register
+    
+    mapping(address => bool) private _worker;
+
+    mapping(address => bool) private _pro;
+    
     // mapping of the register balance
     mapping(address => uint256) private _balances;
 
