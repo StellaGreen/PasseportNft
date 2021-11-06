@@ -21,8 +21,8 @@ contract Passeport is ERC721 {
     // mapping of the register balance
     mapping(address => uint256) private _balances;
 
-    event RegisterdWorker(address indexed)
-    event RegisterdPro(address indexed)
+    event RegisterdWorker(address indexed);
+    event RegisterdPro(address indexed);
 
     // constructor
     constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
