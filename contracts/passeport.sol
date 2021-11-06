@@ -22,6 +22,7 @@ contract Passeport is ERC721 {
     // mapping of people is register
     mapping(uint256 => address) private _register;
 
+    // mapping of the register balance
     mapping(address => uint256) private _balances;
 
     // constructor
@@ -31,6 +32,11 @@ contract Passeport is ERC721 {
     }
 
     // function
+
+    function registerWorker () public {
+        require (msg.sender != _register, "registerWorker : you are register");
+        
+    }
 
 
     //function view
