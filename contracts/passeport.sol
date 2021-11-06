@@ -8,6 +8,10 @@ contract Passeport is ERC721 {
     // enum ?
 
     // struct
+    struct Worker {
+        address workerAddress;
+        string country;
+    }
 
     // Token name
     string private _name;
@@ -28,9 +32,12 @@ contract Passeport is ERC721 {
 
     // function
 
-    function balanceOf (address user) public view return (uint256){
+
+    //function view
+
+    function balanceOf (address user) public view returns (uint256){
         require(user == _register, "balanceOf :you are not registred");
         require(owner != address(0), "balanceOf : balance query for the zero address");
-    returns _balance[_register]
+    return _balance[_register];
     }
 }
