@@ -33,9 +33,17 @@ contract Passeport is ERC721 {
 
     // function
 
-    function registerWorker () public {
+    function registerWorker (string memory countri, uint256 age, ) public {
         require (msg.sender != _register, "registerWorker : you are register");
-        
+        msg.sender += _register;
+
+
+    }
+
+    function registerPro () public {
+        require (msg.sender != _register, "registerWorker : you are register");
+        msg.sender += _register;
+
     }
 
 
