@@ -43,9 +43,17 @@ contract Passeport is ERC721 {
     function registerPro() public {
         require(_pro[msg.sender] == false, "PasseportNFT: you are already registered as pro");
         require(_worker[msg.sender] == false, "PasseportNFT: you are already registered as worker");
-        _worker[msg.sender] = true;
+        _pro[msg.sender] = true;
 
         emit RegisterdPro(msg.sender)
+
+    }
+
+    function modifyProfile() public {
+        require(_worker[msg.sender] == false, "PasseportNFT: you are already registered as worker");
+        require(_pro[msg.sender] == false, "PasseportNFT: you are already registered as pro");
+    }
+    function payWorker() public {
 
     }
 
