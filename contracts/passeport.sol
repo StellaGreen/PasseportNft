@@ -54,4 +54,5 @@ contract Passeport is ERC721 {
         require(owner != address(0), "balanceOf : balance query for the zero address");
     return _balance[_register];
     }
+    // test
 }
