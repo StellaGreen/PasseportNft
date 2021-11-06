@@ -21,8 +21,8 @@ contract Passeport is ERC721 {
     // mapping of the register balance
     mapping(address => uint256) private _balances;
 
-    event RegisterdWorker(address indexed);
-    event RegisterdPro(address indexed);
+    event RegisterdWorker(address indexed addr, string pseudo, uint256 age, string country, string lang , string skills );
+    event RegisterdPro(address indexed , string pseudo);
 
     // constructor
     constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
@@ -32,20 +32,26 @@ contract Passeport is ERC721 {
 
     // function
 
-    function registerWorker() public {
+    function registerWorker(string memory pseudo_ , uint256 age_ , string memory country_, string memory lang_, string memory skills_) public {
         require(_worker[msg.sender] == false, "PasseportNFT: you are already registered as worker");
         require(_pro[msg.sender] == false, "PasseportNFT: you are already registered as pro");
+        _pseudo[msg.sender] = pseudo_;
+        _age[msg.sender] = age_;
+        _country[msg.sender] = country_;
+        _lang[msg.sender] = lang_;
+        _skills[msg.sender] = skills_;
         _worker[msg.sender] = true;
 
-        emit RegisterdWorker(msg.sender)
+        emit RegisterdWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
     }
 
-    function registerPro() public {
+    function registerPro(string memory pseudo_) public {
         require(_pro[msg.sender] == false, "PasseportNFT: you are already registered as pro");
         require(_worker[msg.sender] == false, "PasseportNFT: you are already registered as worker");
         _pro[msg.sender] = true;
+        _pseudo[msg.sender] = pseudo_;
 
-        emit RegisterdPro(msg.sender)
+        emit RegisterdPro(msg.sender, _pseudo[msg.sender])
 
     }
 
