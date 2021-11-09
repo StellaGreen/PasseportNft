@@ -77,6 +77,10 @@ contract Passeport is ERC721 {
 
         emit ModifiedWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
     }
+    // TODO : worker defini son prix
+
+
+    // TODO : pro paie le worker
 
     function payWorker() public {
         require(_worker[msg.sender] == false, "PasseportNFT: only pro can use this function"");
@@ -84,11 +88,16 @@ contract Passeport is ERC721 {
 
     }
 
-    //function view
+    //function view 
+    //TODO : balanceOf a modifier
 
     function balanceOf(address user) public view returns (uint256) {
         require(user == _register, "PasseportNFT: you are not registred");
         require(owner != address(0), "PasseportNFT: balance query for the zero address");
         return _balance[_register];
     }
+
+    //TODO faire les fonction view pour chacuns des states du worker
+
+    
 }
