@@ -2,8 +2,12 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 
 contract Passeport is ERC721 {
+
+    // using address from openzeppelin
+    using Address for address payable;
 
     // worker
     mapping(address => string) private _pseudo;
@@ -71,7 +75,7 @@ contract Passeport is ERC721 {
     function payWorker() public {
         require(_worker[msg.sender] == false, "PasseportNFT: only pro can use this function"");
         require(_pro[msg.sender] == true, "PasseportNFT: only pro can use this function"");
-        
+
     }
 
     //function view
