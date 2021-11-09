@@ -8,6 +8,13 @@ import "@openzeppelin/contracts/utils/Address.sol";
 contract Passeport is ERC721 {
 
     using Address for address payable;
+
+    // Token name
+    string private _name;
+
+    // Token symbol
+    string private _symbol;
+
     // worker
 
     mapping(address => string) private _pseudo;

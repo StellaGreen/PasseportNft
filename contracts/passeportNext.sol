@@ -9,6 +9,12 @@ contract Passeport is ERC721 {
     // using address from openzeppelin
     using Address for address payable;
 
+        // Token name
+    string private _name;
+
+    // Token symbol
+    string private _symbol;
+
     // worker
     mapping(address => string) private _pseudo;
     mapping(address => uint256) private _age;
@@ -63,13 +69,13 @@ contract Passeport is ERC721 {
     function modifyProfile(string memory pseudo_ , uint256 age_ , string memory country_, string memory lang_, string memory skills_) public {
         require(_worker[msg.sender] == true, "PasseportNFT: only worker can use this function");
         require(_pro[msg.sender] == false, "PasseportNFT: only worker can use this function");
-        _pseudo[msg.sender] != pseudo_ && _pseudo[msg.sender] = pseudo_;
-        _age[msg.sender] != age_ && _age[msg.sender] = age_;
-        _country[msg.sender] != country_ && _country[msg.sender] = country_;
-        _lang[msg.sender] != lang_ && _lang[msg.sender] = lang_;
-        _skills[msg.sender] != skills_ && _skills[msg.sender] = skills_;
+        _pseudo[msg.sender] = pseudo_;
+        _age[msg.sender] = age_;
+        _country[msg.sender] = country_;
+        _lang[msg.sender] = lang_;
+        _skills[msg.sender] = skills_;
 
-        emit ModifieddWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
+        emit ModifiedWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
     }
 
     function payWorker() public {
