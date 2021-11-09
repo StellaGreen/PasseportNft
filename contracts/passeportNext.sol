@@ -56,7 +56,7 @@ contract Passeport is ERC721 {
         _pro[msg.sender] = true;
         _pseudo[msg.sender] = pseudo_;
 
-        emit RegisterdPro(msg.sender, _pseudo[msg.sender])
+        emit RegisterdPro(msg.sender, _pseudo[msg.sender]);
 
     }
 
@@ -69,7 +69,7 @@ contract Passeport is ERC721 {
         _lang[msg.sender] != lang_ && _lang[msg.sender] = lang_;
         _skills[msg.sender] != skills_ && _skills[msg.sender] = skills_;
 
-        emit ModifieddWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
+        emit ModifieddWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender]);
     }
 
     function payWorker() public {
