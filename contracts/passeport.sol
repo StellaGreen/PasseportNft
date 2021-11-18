@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Passeport is ERC721 {
 
-    // enum ?
+    // enum ? hlhlkjkjhkjh
 
     // struct
     struct Worker {
