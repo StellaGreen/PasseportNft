@@ -53,7 +53,7 @@ contract Passeport is ERC721 {
         _skills[msg.sender] = skills_;
         _worker[msg.sender] = true;
 
-        emit RegisterdWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
+        emit RegisterdWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender]);
     }
 
     function registerPro(string memory pseudo_) public {
@@ -75,7 +75,7 @@ contract Passeport is ERC721 {
         _lang[msg.sender] = lang_;
         _skills[msg.sender] = skills_;
 
-        emit ModifiedWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender])
+        emit ModifiedWorker(msg.sender , _pseudo[msg.sender], _age[msg.sender], _country[msg.sender], _lang[msg.sender], _skills[msg.sender]);
     }
     // TODO : worker defini son prix
 
